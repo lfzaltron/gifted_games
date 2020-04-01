@@ -1,0 +1,67 @@
+.game-container {
+    width: 100%;
+    max-width: 1120px;
+    height: 100vh;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-container .content {
+    width: 100%;
+    padding: 48px;
+    background: #f0f0f5;
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.game-container .content h1 {
+    margin: 32px 0 32px;
+    font-size: 32px;
+}
+
+.game-container .content p {
+    font-size: 18px;
+    color: #737380;
+    line-height: 32px;
+}
+
+.game-container .content .board {
+    margin: 32px;
+    background: #737380;
+    display: flex;
+}
+
+.game-container .content .board .board-space {
+    background: #9393a0;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-container .content .board .board-space + .board-space {
+    margin-left: 0px;
+}
+
+.game-container .content .board .board-space button {
+    width: 80px;
+    height: 80px;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.game-container .content .board .board-space button.left {
+    background-color: rgb(255, 146, 146);
+}
+
+.game-container .content .board .board-space button.right {
+    background-color: rgb(146, 146, 255);
+}
