@@ -33,6 +33,13 @@
     line-height: 32px;
 }
 
+.game-container .content .alert {
+    font-size: 18px;
+    color: #ff4242;
+    line-height: 32px;
+    font-weight: bold;
+}
+
 .game-container .content .board {
     margin: 32px;
     background: #737380;
