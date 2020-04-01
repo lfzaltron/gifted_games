@@ -131,12 +131,14 @@ export default function SevenLine() {
                 </button>
 
                 <h1>Regras:</h1>
-                <p>Peças azuis só andam para a direita.</p>
-                <p>Peças vermelhas só andam para a esquerda.</p>
-                <p>
-                    Peças só andam para casa vazia, podendo estar ao lado ou
-                    após uma única peça obrigatoriamente de cor oposta.
-                </p>
+                <ul className="left">
+                    <li>Peças azuis só andam para a direita.</li>
+                    <li>Peças vermelhas só andam para a esquerda.</li>
+                    <li>
+                        Peças só andam para casa vazia, podendo estar ao lado ou
+                        após uma única peça obrigatoriamente de cor oposta.
+                    </li>
+                </ul>
             </div>
         </div>
     );

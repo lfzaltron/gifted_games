@@ -1,7 +1,7 @@
 .game-container {
     width: 100%;
     max-width: 1120px;
-    height: 100vh;
+    height: 100%;
     margin: 0 auto;
 
     display: flex;
@@ -31,6 +31,14 @@
     font-size: 18px;
     color: #737380;
     line-height: 32px;
+}
+
+.game-container .content ul.left {
+    width: 90%;
+    font-size: 18px;
+    color: #737380;
+    line-height: 32px;
+    list-style: square;
 }
 
 .game-container .content .alert {
@@ -71,4 +79,23 @@
 
 .game-container .content .board .board-space button.right {
     background-color: rgb(146, 146, 255);
+}
+
+@media only screen and (max-width: 650px) {
+    .game-container .content .board {
+        flex-direction: column;
+        justify-content: start;
+    }
+
+    .game-container .content .board .board-space + .board-space {
+        margin-left: 5px;
+        margin-top: 0px;
+    }
+
+    .game-container .content .board .board-space button {
+        width: 80px;
+        height: 40px;
+        font-weight: regular;
+        font-size: 20px;
+    }
 }
