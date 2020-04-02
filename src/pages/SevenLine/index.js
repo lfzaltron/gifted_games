@@ -135,8 +135,9 @@ export default function SevenLine() {
                     <li>Peças azuis só andam para a direita.</li>
                     <li>Peças vermelhas só andam para a esquerda.</li>
                     <li>
-                        Peças só andam para casa vazia, podendo estar ao lado ou
-                        após uma única peça obrigatoriamente de cor oposta.
+                        As peças só andam para a casa vazia, podendo estar ao
+                        lado ou após uma única peça obrigatoriamente de cor
+                        oposta.
                     </li>
                 </ul>
 
