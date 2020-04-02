@@ -139,6 +139,23 @@ export default function SevenLine() {
                         após uma única peça obrigatoriamente de cor oposta.
                     </li>
                 </ul>
+
+                <h2>Créditos:</h2>
+                <p>
+                    Jogo:{' '}
+                    <a href="https://www.instagram.com/professorcaloi/">
+                        Professor Caloi.
+                    </a>{' '}
+                    Desenvolvedor:{' '}
+                    <a href="https://www.instagram.com/lfzaltron/">
+                        {' '}
+                        Luís F. Zaltron.
+                    </a>{' '}
+                    Código:{' '}
+                    <a href="https://github.com/lfzaltron/gifted_games">
+                        GitHub.
+                    </a>
+                </p>
             </div>
         </div>
     );

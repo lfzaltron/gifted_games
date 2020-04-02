@@ -27,6 +27,10 @@
     font-size: 32px;
 }
 
+.game-container .content h2 {
+    margin-top: 64px;
+}
+
 .game-container .content p {
     font-size: 18px;
     color: #737380;
