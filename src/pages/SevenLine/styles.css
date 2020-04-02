@@ -1,9 +1,8 @@
 .game-container {
     width: 100%;
-    max-width: 1120px;
+    max-width: 62rem;
     height: 100%;
     margin: 0 auto;
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -11,10 +10,10 @@
 
 .game-container .content {
     width: 100%;
-    padding: 48px;
+    padding: 3rem;
     background: #f0f0f5;
-    box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.2);
+    border-radius: 0.5rem;
 
     display: flex;
     justify-content: space-between;
@@ -23,58 +22,77 @@
 }
 
 .game-container .content h1 {
-    margin: 32px 0 32px;
-    font-size: 32px;
+    margin: 2rem 0 2rem;
+    font-size: 2rem;
 }
 
-.game-container .content h2 {
-    margin-top: 64px;
+.game-container .content h2.credits-title {
+    margin-top: 4rem;
+    margin-bottom: 1rem;
+}
+
+.game-container .content .credits-container {
+    font-size: 1.1rem;
+    color: #737380;
+    line-height: 2rem;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.game-container .content .credits-container div {
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 
 .game-container .content p {
-    font-size: 18px;
+    font-size: 1.1rem;
     color: #737380;
-    line-height: 32px;
+    line-height: 2rem;
+    margin-bottom: 2rem;
 }
 
 .game-container .content ul.left {
-    width: 90%;
-    font-size: 18px;
+    font-size: 1.1rem;
     color: #737380;
-    line-height: 32px;
+    line-height: 2rem;
     list-style: square;
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
 
 .game-container .content .alert {
-    font-size: 18px;
+    font-size: 1.1rem;
     color: #ff4242;
-    line-height: 32px;
+    line-height: 1.1rem;
     font-weight: bold;
 }
 
 .game-container .content .board {
-    margin: 32px;
+    margin: 2rem;
     background: #737380;
     display: flex;
+    border-radius: 0.2rem;
+    width: 90%;
 }
 
 .game-container .content .board .board-space {
     background: #9393a0;
-    margin: 5px;
+    margin: 0.3rem;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 20%;
 }
 
 .game-container .content .board .board-space + .board-space {
-    margin-left: 0px;
+    margin-left: 0;
 }
 
-.game-container .content .board .board-space button {
-    width: 80px;
-    height: 80px;
+.game-container .content .board .board-space button.piece {
+    width: 100%;
+    height: 5rem;
     font-weight: bold;
-    font-size: 30px;
 }
 
 .game-container .content .board .board-space button.left {
@@ -85,21 +103,37 @@
     background-color: rgb(146, 146, 255);
 }
 
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 720px) {
+    .game-container .content .board {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 520px) {
+    .game-container .content .credits-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media only screen and (max-width: 350px) {
     .game-container .content .board {
         flex-direction: column;
         justify-content: start;
+        width: auto;
+    }
+
+    .game-container .content .board .board-space {
+        width: 6rem;
     }
 
     .game-container .content .board .board-space + .board-space {
-        margin-left: 5px;
-        margin-top: 0px;
+        margin-left: 0.3rem;
+        margin-top: 0;
     }
 
-    .game-container .content .board .board-space button {
-        width: 80px;
-        height: 40px;
-        font-weight: regular;
-        font-size: 20px;
+    .game-container .content .board .board-space button.piece {
+        height: 4rem;
+        font-weight: 400;
     }
 }

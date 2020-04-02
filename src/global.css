@@ -1,5 +1,21 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
 
+html {
+    font-size: 100%;
+}
+
+@media (max-width: 1080px) {
+    html {
+        font-size: 80%;
+    }
+}
+
+@media (max-width: 720px) {
+    html {
+        font-size: 70%;
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -8,34 +24,55 @@
 }
 
 body {
-    font: 400 14px Roboto, sans-serif;
+    font: 400 1rem Roboto, sans-serif;
     background: #f0f0f5;
     -webkit-font-smoothing: antialiased;
 }
 
 button {
-    font: 400 18px Roboto, sans-serif;
+    font: 400 1.5rem Roboto, sans-serif;
     cursor: pointer;
 }
 
 .button {
-    height: 60px;
+    height: 3rem;
     background: #858585;
     border: 0;
-    border-radius: 8px;
+    border-radius: 0.5rem;
     color: #fff;
     font-weight: 700;
-    margin-top: 16px;
+    margin-top: 1rem;
     display: inline-block;
     text-align: center;
     text-decoration: none;
-    font-size: 18px;
-    line-height: 60px;
+    font-size: 1.1rem;
+    line-height: 3rem;
     transition: filter 0.2s;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
 
 .button:hover {
-    filter: brightness(90%);
+    filter: brightness(80%);
+}
+
+.selectLabel {
+    font-size: 1rem;
+    color: #737380;
+}
+
+.select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url(http://www.webcis.com.br/images/imagens-noticias/select/ico-seta-appearance.gif)
+        no-repeat #eeeeee;
+    background-position: calc(15rem - 32px) center;
+    width: 15rem;
+    height: 2rem;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    padding-left: 1rem;
+    color: #737380;
+    margin: 1rem;
 }

@@ -1,16 +1,43 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import './styles.css';
 
-const size = 6;
-
 export default function SevenLine() {
-    const [board, setBoard] = useState(newBoard);
+    const [board, setBoard] = useState([]);
     const [invalidMove, setInvalidMove] = useState(false);
+    const [size, setSize] = useState(6);
+
+    useEffect(reset, [size]);
 
     function reset() {
+        const newBoard = createNewBoard();
+
         setBoard(newBoard);
         setInvalidMove(false);
+    }
+
+    function createNewBoard() {
+        const newBoard = [];
+        for (let i = 0; i <= size; i++) {
+            if (i === size / 2) {
+                newBoard.push({
+                    symbol: ' ',
+                    direction: 0,
+                    position: i
+                });
+            } else {
+                newBoard.push({
+                    symbol: i <= size / 2 ? '>>' : '<<',
+                    direction: i <= size / 2 ? 1 : -1,
+                    position: i
+                });
+            }
+        }
+        return newBoard;
+    }
+
+    function changeBoardSize(event) {
+        setSize(event.target.value);
     }
 
     function possibleMoveDestination(piece) {
@@ -64,6 +91,9 @@ export default function SevenLine() {
     }
 
     function isVictory() {
+        const victory = createNewBoard()
+            .map(item => ({ ...item, position: size - item.position }))
+            .sort((a, b) => a.position - b.position);
         const youWin = board.reduce((acc, cur, curIndex) => {
             if (acc === false) return false;
             return cur.symbol === victory[curIndex].symbol;
@@ -112,19 +142,32 @@ export default function SevenLine() {
                         <div className="board-space" key={piece.position}>
                             <button
                                 onClick={() => move(piece)}
-                                className={
+                                className={`piece ${
                                     piece.symbol === '>>'
                                         ? 'right'
                                         : piece.symbol === '<<'
                                         ? 'left'
                                         : ''
-                                }
+                                }`}
                             >
                                 {piece.symbol}
                             </button>
                         </div>
                     ))}
                 </div>
+
+                <label className="selectLabel">
+                    Nível:{' '}
+                    <select
+                        onChange={changeBoardSize}
+                        value={size}
+                        className="select"
+                    >
+                        <option value={4}>Fácil</option>
+                        <option value={6}>Médio</option>
+                        <option value={8}>Difícil</option>
+                    </select>
+                </label>
 
                 <button onClick={reset} className="button">
                     Reiniciar
@@ -141,44 +184,31 @@ export default function SevenLine() {
                     </li>
                 </ul>
 
-                <h2>Créditos:</h2>
-                <p>
-                    Jogo:{' '}
-                    <a href="https://www.instagram.com/professorcaloi/">
-                        Professor Caloi.
-                    </a>{' '}
-                    Desenvolvedor:{' '}
-                    <a href="https://www.instagram.com/lfzaltron/">
-                        {' '}
-                        Luís F. Zaltron.
-                    </a>{' '}
-                    Código:{' '}
-                    <a href="https://github.com/lfzaltron/gifted_games">
-                        GitHub.
-                    </a>
-                </p>
+                <h2 className="credits-title">Créditos:</h2>
+                <div className="credits-container">
+                    <div>
+                        Jogo:{' '}
+                        <a href="https://www.instagram.com/professorcaloi/">
+                            Professor Caloi.
+                        </a>
+                    </div>
+
+                    <div>
+                        Desenvolvedor:{' '}
+                        <a href="https://www.instagram.com/lfzaltron/">
+                            {' '}
+                            Luís F. Zaltron.
+                        </a>
+                    </div>
+
+                    <div>
+                        Código:{' '}
+                        <a href="https://github.com/lfzaltron/gifted_games">
+                            GitHub.
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     );
 }
-
-let newBoard = [];
-for (let i = 0; i <= size; i++) {
-    if (i === size / 2) {
-        newBoard.push({
-            symbol: ' ',
-            direction: 0,
-            position: i
-        });
-    } else {
-        newBoard.push({
-            symbol: i <= size / 2 ? '>>' : '<<',
-            direction: i <= size / 2 ? 1 : -1,
-            position: i
-        });
-    }
-}
-
-const victory = newBoard
-    .map(item => ({ ...item, position: size - item.position }))
-    .sort((a, b) => a.position - b.position);
